@@ -1,4 +1,5 @@
 ---
+// src/pages/es/index.astro
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import Faq from '../../components/Faq.astro';
@@ -8,6 +9,9 @@ import nataliaFoto from '../../assets/NataliaMahana.jpeg';
 import imgConsulta1 from '../../assets/Consulta1.jpeg';
 import imgConsulta14 from '../../assets/Consulta14.jpeg';
 import imgConsulta4 from '../../assets/Consulta4.jpeg';
+
+// Manejo de base para GitHub Pages y localhost
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const faqItems = [
     {
@@ -45,7 +49,11 @@ const faqItems = [
 ];
 ---
 
-<BaseLayout title="Natalia Mahana Palomer | Psicóloga en Berlín y Online" lang="es">
+<BaseLayout
+        title="Natalia Mahana Palomer | Psicóloga en Berlín y Online"
+        lang="es"
+        description="Psicología y acompañamiento psicológico en español e inglés. Espacio queer-affirming, intercultural y neuroafirmativo en Berlín y online."
+>
 
     <!-- 1. HERO -->
     <Hero
@@ -68,18 +76,20 @@ const faqItems = [
                 <h2>Soy Natalia Mahana Palomer</h2>
                 <p class="perfil-intro">Psicóloga chilena con más de diez años de experiencia.</p>
 
-                <p>A veces sabemos que algo necesita atención, aunque no podamos explicar exactamente qué nos pasa. Mi trabajo se basa en una mirada personalizada e intercultural, considerando las historias, relaciones y contextos que forman parte de tu experiencia.</p>
+                <p>
+                    A veces sabemos que algo necesita atención, aunque no podamos explicar exactamente qué nos pasa. Mi trabajo se basa en una mirada personalizada e intercultural, considerando las historias, relaciones y contextos que forman parte de tu experiencia.
+                </p>
 
                 <blockquote class="quote-box">
                     “Este es un espacio queer-affirming, intercultural y respetuoso de las diferentes formas de vivir, relacionarse y experimentar el mundo.”
                 </blockquote>
 
-                <a href="/es/about" class="btn btn-secondary">Conocer más sobre mí &rarr;</a>
+                <a href={`${base}/es/about`} class="btn btn-secondary">Conocer más sobre mí &rarr;</a>
             </div>
         </div>
     </section>
 
-    <!-- ¿CÓMO PUEDO ACOMPAÑARTE? -->
+    <!-- 3. ¿CÓMO PUEDO ACOMPAÑARTE? -->
     <section id="servicios" class="seccion-alt">
         <div class="container">
             <h2 class="section-title">¿Cómo puedo acompañarte?</h2>
@@ -93,7 +103,7 @@ const faqItems = [
                         <h3>Psicología para adultxs</h3>
                         <p>Un espacio para detenerte, comprender mejor lo que estás viviendo y explorar nuevas formas de relacionarte contigo mismx y con otrxs.</p>
                         <span class="servicio-tag">Online y Presencial • Español e Inglés</span>
-                        <a href="/es/servicios/adultos" class="btn btn-outline">Conocer más</a>
+                        <a href={`${base}/es/servicios/adultos`} class="btn btn-outline">Conocer más</a>
                     </div>
                 </div>
 
@@ -104,7 +114,7 @@ const faqItems = [
                         <h3>Acompañamiento para cuidadorxs</h3>
                         <p>Cuando criar se vuelve abrumador, no tienes que resolverlo todo solx. Herramientas respetuosas que tengan sentido para tu familia.</p>
                         <span class="servicio-tag">Online y Presencial • Español e Inglés</span>
-                        <a href="/es/servicios/cuidadores" class="btn btn-outline">Conocer más</a>
+                        <a href={`${base}/es/servicios/cuidadores`} class="btn btn-outline">Conocer más</a>
                     </div>
                 </div>
 
@@ -115,7 +125,7 @@ const faqItems = [
                         <h3>Niñxs y adolescentes</h3>
                         <p>Un espacio seguro donde puedan sentirse escuchadxs, expresar lo que están viviendo y desarrollar herramientas para afrontar sus dificultades.</p>
                         <span class="servicio-tag">Online y Presencial • Español e Inglés</span>
-                        <a href="/es/servicios/ninos-adolescentes" class="btn btn-outline">Conocer más</a>
+                        <a href={`${base}/es/servicios/ninos-adolescentes`} class="btn btn-outline">Conocer más</a>
                     </div>
                 </div>
             </div>
@@ -130,7 +140,7 @@ const faqItems = [
 
             <div class="grid-enfoque">
 
-                <!-- Tarjeta 1: Constructivismo & Vínculo -->
+                <!-- Tarjeta 1: Constructivismo -->
                 <div class="enfoque-card">
                     <div class="enfoque-icon-wrapper">
                         <svg class="enfoque-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -170,9 +180,9 @@ const faqItems = [
         </div>
     </section>
 
-
-    <!-- FAQ -->
+    <!-- 5. FAQ -->
     <Faq title="Preguntas Frecuentes" items={faqItems} />
+
     <!-- 6. CONTACTO & URGENCIAS -->
     <section id="contacto" class="seccion-clara">
         <div class="container grid-2-col">
@@ -186,21 +196,23 @@ const faqItems = [
                 <!-- Email con Ícono -->
                 <div class="contacto-item">
                     <svg class="contacto-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <rect width="20" height="16" x="2" y="4" radius="2"/>
+                        <rect width="20" height="16" x="2" y="4" rx="2"/>
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L1 7"/>
                     </svg>
                     <a href="mailto:n.mahanapalomer@proton.me">n.mahanapalomer@proton.me</a>
                 </div>
 
+                <br />
+
                 <a href="https://wa.me/4915225279914" target="_blank" rel="noopener" class="btn btn-whatsapp" style="margin: 20px 0;">
                     Hablar por WhatsApp (+49 1522 5279914)
                 </a>
 
-                <!-- Urgencias Psicológicas con Enlace en el Texto -->
+                <!-- Urgencias Psicológicas -->
                 <div class="crisis-box">
                     <h4>Emergencias psicológicas</h4>
                     <p>
-                        En caso de una crisis psicológica aguda o si necesitas ayuda urgente, puedes contactar con el <a href="https://www.berliner-krisendienst.de/es-2/" target="_blank" rel="noopener" class="crisis-link"><strong>Berliner Krisendienst</strong></a>.
+                        En caso de una crisis psicológica aguda o si necesitas ayuda urgente, puedes contactar con el <a href="https://www.berliner-krisendienst.de/es-2/" target="_blank" rel="noopener" class="crisis-link">Berliner Krisendienst</a>.
                     </p>
                     <p class="crisis-urgencia">Si existe un riesgo inmediato para tu seguridad o la de otra persona, llama al <strong>112</strong>.</p>
                 </div>
@@ -271,8 +283,6 @@ const faqItems = [
         margin-bottom: 15px;
     }
 
-
-
     .perfil-intro {
         font-size: 1.15rem;
         font-weight: 500;
@@ -293,6 +303,7 @@ const faqItems = [
         box-shadow: 0 4px 15px rgba(129, 99, 139, 0.05);
     }
 
+    /* Grid de Servicios */
     .grid-servicios {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -337,7 +348,7 @@ const faqItems = [
         margin-top: auto;
     }
 
-    /* Grid Enfoque Mejorado */
+    /* Grid Enfoque */
     .grid-enfoque {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -345,7 +356,6 @@ const faqItems = [
         margin-top: 30px;
     }
 
-    /* Tarjeta con Efecto Hover */
     .enfoque-card {
         background: var(--bg-card);
         padding: 40px 32px;
@@ -382,7 +392,6 @@ const faqItems = [
         opacity: 1;
     }
 
-    /* Iconos */
     .enfoque-icon-wrapper {
         width: 58px;
         height: 58px;
@@ -427,38 +436,13 @@ const faqItems = [
         font-size: 0.96rem;
         margin: 0;
     }
-    .formulario-card {
-        background: var(--bg-card);
-        padding: 40px;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        border: 1px solid var(--lavender-soft);
-    }
 
-    .form-group {
-        margin-bottom: 18px;
-    }
-
-    .form-group label {
-        display: block;
-        margin-bottom: 6px;
-        font-weight: 500;
-        font-size: 0.95rem;
-    }
-
-    .form-group input, .form-group textarea, .form-group select {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid var(--lavender-medium);
-        border-radius: 8px;
-        font-family: inherit;
-    }
+    /* Contacto y Formulario */
     .contacto-desc {
         margin-bottom: 20px;
         line-height: 1.65;
     }
 
-    /* Ítem de Email con Ícono */
     .contacto-item {
         display: inline-flex;
         align-items: center;
@@ -485,7 +469,6 @@ const faqItems = [
         color: var(--primary-color);
     }
 
-    /* Crisis Box */
     .crisis-box {
         margin-top: 25px;
         padding: 18px 20px;
@@ -506,6 +489,7 @@ const faqItems = [
         color: var(--emergency);
         text-decoration: underline;
         text-underline-offset: 2px;
+        font-weight: 600;
         transition: opacity 0.2s ease;
     }
 
@@ -517,6 +501,33 @@ const faqItems = [
         margin-top: 6px;
         font-size: 0.88rem;
         color: var(--text-light);
+    }
+
+    .formulario-card {
+        background: var(--bg-card);
+        padding: 40px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--lavender-soft);
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--lavender-medium);
+        border-radius: 8px;
+        font-family: inherit;
     }
 
     @media (max-width: 768px) {

@@ -1,31 +1,20 @@
 ---
 // src/pages/index.astro
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="robots" content="noindex" />
-    <title>Cargando...</title>
-    <script is:inline>
-        const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-
-        // If the browser language starts with 'es', send them to /es/, otherwise default to /en/
-        if (browserLang.startsWith('es')) {
-            window.location.replace('/es/');
-        } else {
-            window.location.replace('/en/');
-        }
+    <meta charset="utf-8" />
+    <title>Natalia Mahana Palomer</title>
+    <script is:inline define:vars={{ base }}>
+        const userLang = navigator.language || navigator.userLanguage;
+        const target = userLang && userLang.toLowerCase().startsWith('en') ? 'en' : 'es';
+        window.location.replace(`${base}/${target}/`);
     </script>
+    <meta http-equiv="refresh" content={`0;url=${base}/es/`} />
 </head>
 <body>
-<noscript>
-    <p>Selecciona tu idioma / Select your language:</p>
-    <ul>
-        <li><a href="/es/">Español</a></li>
-        <li><a href="/en/">English</a></li>
-    </ul>
-</noscript>
 </body>
 </html>
