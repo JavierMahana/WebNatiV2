@@ -1,0 +1,31 @@
+---
+// src/pages/index.astro
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <title>Cargando...</title>
+    <script is:inline>
+        const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+
+        // If the browser language starts with 'es', send them to /es/, otherwise default to /en/
+        if (browserLang.startsWith('es')) {
+            window.location.replace('/es/');
+        } else {
+            window.location.replace('/en/');
+        }
+    </script>
+</head>
+<body>
+<noscript>
+    <p>Selecciona tu idioma / Select your language:</p>
+    <ul>
+        <li><a href="/es/">Español</a></li>
+        <li><a href="/en/">English</a></li>
+    </ul>
+</noscript>
+</body>
+</html>

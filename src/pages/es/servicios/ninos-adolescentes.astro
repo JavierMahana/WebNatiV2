@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import imgConsulta4 from '../../../assets/Consulta4.jpeg';
+---
+
+<BaseLayout title="Psicología para Niñxs y Adolescentes | Natalia Mahana Palomer" lang="es">
+    <div class="container seccion-detalle">
+
+        <header class="header-detalle">
+            <h1>Psicología para niñxs y adolescentes</h1>
+            <p class="lead">Un espacio para sentirse escuchadx, comprendidx y construir herramientas para afrontar dificultades.</p>
+        </header>
+
+        <div class="grid-detalle">
+            <div class="detalle-texto">
+                <Image src={imgConsulta4} alt="Consulta psicológica infanto-juvenil" class="banner-img" />
+
+                <p>A veces lxs niñxs y adolescentes tienen dificultades para expresar lo que sienten o comprender qué les está ocurriendo. Estas vivencias pueden manifestarse a través de sus emociones, cambios en sus relaciones, en su comportamiento o en su vida cotidiana.</p>
+
+                <p>Ofrezco sesiones de psicología adaptadas a la edad, características y necesidades de cada persona. Cuando es necesario, trabajo también junto a madres, padres y cuidadorxs: el objetivo no es buscar culpables, sino comprender mejor la situación y construir formas de acompañamiento que tengan sentido para toda la familia.</p>
+
+                <h3>Situaciones frecuentes en las que puedo ofrecer apoyo:</h3>
+                <ul class="lista-items">
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Dificultades emocionales o de autorregulación.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Ansiedad, miedos y preocupaciones persistentes.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Momentos de transición (mudanzas, adaptaciones, cambios familiares).</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Dificultades de comportamiento o conflictos en la escuela.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Relaciones con pares y habilidades sociales.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Autoestima e identidad.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Temáticas relacionadas con género y sexualidad.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Neurodivergencia y diferentes formas de experimentar el mundo.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Migración y procesos de adaptación intercultural.</span>
+                    </li>
+                </ul>
+
+                <h3>Ubicación Presencial en Berlín</h3>
+                <p>Presencial en Spark: Markgrafendamm 20, Berlín.</p>
+                <div class="mapa-wrapper">
+                    <iframe
+                            src="https://maps.google.com/maps?q=SPARK%20Collective,%20Markgrafendamm%2020,%20Berlin&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="320"
+                            style="border:0; border-radius: 12px;"
+                            allowfullscreen=""
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <aside class="sidebar-precios">
+                <div class="pricing-card">
+                    <h3>Honorarios y Modalidades</h3>
+                    <p class="duracion-sesion">Duración por sesión: 50 minutos</p>
+
+                    <div class="precio-item">
+                        <span class="modalidad">Sesión Niñxs / Adolescentes</span>
+                        <span class="valor">120 €</span>
+                    </div>
+
+                    <p class="nota-social">Plazas reducidas: Cuento con cupos limitados con tarifa diferenciada bajo consulta previa.</p>
+
+                    <hr />
+
+                    <h4>Seguro médico público</h4>
+                    <p class="info-seguro">El seguro médico público alemán no cubre mis sesiones de forma directa. Para buscar profesionales cubiertos por Krankenkasse, visita <a href="https://arztsuche.116117.de/" target="_blank" rel="noopener">KV Berlin (116117)</a>.</p>
+
+                    <a href="/es/#contacto" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Consultar o reservar</a>
+                </div>
+            </aside>
+        </div>
+
+    </div>
+</BaseLayout>
+
+<style>
+    .seccion-detalle { padding-top: 130px; padding-bottom: 90px; }
+    .header-detalle { text-align: center; max-width: 800px; margin: 0 auto 50px; }
+    .lead { font-size: 1.2rem; color: var(--text-light); margin-top: 10px; }
+    .grid-detalle { display: grid; grid-template-columns: 1fr 380px; gap: 50px; align-items: start; }
+    .banner-img { width: 100%; height: 320px; object-fit: cover; border-radius: var(--radius); margin-bottom: 30px; }
+    .detalle-texto h3 { margin-top: 45px; margin-bottom: 18px; }
+    .lista-items { list-style: none; padding: 0; margin: 20px 0 35px; }
+    .lista-items li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 1rem; color: var(--text-main); line-height: 1.55; }
+    .item-icon { width: 18px; height: 18px; color: var(--primary-color); margin-top: 4px; flex-shrink: 0; }
+    .sidebar-precios { position: sticky; top: 100px; }
+    .pricing-card { background: var(--bg-alt); border: 1px solid var(--lavender-soft); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .duracion-sesion { font-size: 0.95rem; color: var(--secondary-color); margin: 6px 0 16px; }
+    .precio-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--lavender-soft); }
+    .precio-item .valor { font-size: 1.5rem; font-weight: 700; color: var(--secondary-color); }
+    .nota-social, .info-seguro { font-size: 0.88rem; color: var(--text-light); margin-top: 15px; line-height: 1.5; }
+    .mapa-wrapper { margin-top: 20px; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+    @media (max-width: 850px) { .grid-detalle { grid-template-columns: 1fr; } .sidebar-precios { position: static; } }
+</style>

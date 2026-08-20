@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import type { Locale } from '../i18n/ui';
+
+interface Props {
+    title: string;
+    lang: Locale;
+    description?: string;
+}
+
+const { title, lang, description = 'Psicología y acompañamiento psicológico en español e inglés en Berlín y Online.' } = Astro.props;
+const cleanPath = Astro.url.pathname.replace(/^\/(es|en)/, '') || '/';
+---
+
+<!doctype html>
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Google Fonts Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Alternate hreflang tags -->
+    <link rel="alternate" hreflang="es" href={new URL(`/es${cleanPath === '/' ? '/' : cleanPath}`, Astro.url)} />
+    <link rel="alternate" hreflang="en" href={new URL(`/en${cleanPath === '/' ? '/' : cleanPath}`, Astro.url)} />
+</head>
+<body>
+<Header currentLang={lang} />
+<main>
+    <slot />
+</main>
+<Footer currentLang={lang} />
+</body>
+</html>

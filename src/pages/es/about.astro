@@ -1,0 +1,577 @@
+---
+// src/pages/es/about.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import nataliaFoto from '../../assets/NataliaMahana.jpeg';
+import frontSpark from '../../assets/FrontSpark.jpeg';
+import itsComplicatedLogo from '../../assets/itscomplicated.jpg';
+---
+
+<BaseLayout
+        title="Sobre Mí | Natalia Mahana Palomer"
+        lang="es"
+        description="Psicóloga clínica titulada por la Universidad de Chile con más de 10 años de experiencia. Consulta presencial en Berlín y online en español e inglés."
+>
+    <div class="about-page">
+
+        <!-- 1. HERO / INTRODUCCIÓN PERSONAL -->
+        <section class="about-hero seccion-clara">
+            <div class="container grid-hero">
+                <div class="hero-foto-col">
+                    <div class="foto-frame">
+                        <Image src={nataliaFoto} alt="Natalia Mahana Palomer" class="foto-perfil" />
+                        <div class="foto-decoracion"></div>
+                    </div>
+                </div>
+
+                <div class="hero-texto-col">
+                    <span class="badge">Trayectoria Profesional</span>
+                    <h1>Hola, soy Natalia Mahana Palomer</h1>
+                    <p class="lead-text">
+                        Psicóloga chilena con más de diez años de experiencia trabajando con niñxs, adolescentes, adultxs y familias.
+                    </p>
+
+                    <p>
+                        Comencé mi práctica privada en Chile en 2017 y, tras mudarme a Berlín, continué trabajando de manera independiente con personas y familias de distintos contextos culturales.
+                    </p>
+
+                    <p>
+                        A lo largo de mi trayectoria he trabajado en distintos espacios clínicos y educativos, incluyendo consulta particular, hospitales, clínicas especializadas en dificultades alimentarias y colegios en Chile. Estas experiencias me han permitido desarrollar una mirada amplia sobre las diferentes formas en que las personas viven sus dificultades y los distintos contextos que influyen en ellas.
+                    </p>
+
+                    <p>
+                        Soy <strong>psicóloga titulada por la Universidad de Chile</strong>, con formación de especialización en trabajo clínico con niñxs y adolescentes desde una perspectiva constructivista y formación en herramientas de regulación emocional. Mi experiencia también incluye evaluación psicológica, acompañamiento a familias, trabajo interdisciplinario y facilitación de talleres y grupos.
+                    </p>
+
+                    <!-- Badges de Enfoque -->
+                    <div class="tags-container">
+                        <span class="tag">Queer-Affirming</span>
+                        <span class="tag">Neuroafirmativa</span>
+                        <span class="tag">Perspectiva Intercultural</span>
+                        <span class="tag">Enfoque Constructivista</span>
+                        <span class="tag">Sensible al Género</span>
+                    </div>
+
+                    <!-- Perfiles Profesionales -->
+                    <div class="social-profiles">
+                        <a
+                                href="https://www.linkedin.com/in/natalia-mahana-palomer"
+                                target="_blank"
+                                rel="noopener"
+                                class="profile-btn linkedin-btn"
+                                aria-label="Perfil de LinkedIn"
+                        >
+                            <svg class="profile-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6Z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+
+                        <a
+                                href="https://complicated.life/therapists/clinical-psychologist-children-and-adolescent-counsellor-natalia-mahana-palomer"
+                                target="_blank"
+                                rel="noopener"
+                                class="profile-btn complicated-btn"
+                                aria-label="Perfil en It's Complicated"
+                        >
+                            <Image
+                                    src={itsComplicatedLogo}
+                                    alt="It's Complicated Logo"
+                                    class="profile-icon profile-img-icon"
+                            />
+                            <span>It's Complicated</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. MÉTRICAS CLÍNICAS -->
+        <section class="metricas-bar">
+            <div class="container grid-metricas">
+                <div class="metrica-item">
+                    <span class="metrica-num">+10</span>
+                    <span class="metrica-label">Años de experiencia clínica</span>
+                </div>
+                <div class="metrica-item">
+                    <span class="metrica-num">U. de Chile</span>
+                    <span class="metrica-label">Titulada con distinción</span>
+                </div>
+                <div class="metrica-item">
+                    <span class="metrica-num">2017</span>
+                    <span class="metrica-label">Inicio de práctica privada</span>
+                </div>
+                <div class="metrica-item">
+                    <span class="metrica-num">Berlín & Online</span>
+                    <span class="metrica-label">Español e Inglés</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. MI FORMA DE ENTENDER ESTE TRABAJO (TEXTO ÍNTEGRO) -->
+        <section class="seccion-alt">
+            <div class="container seccion-entender">
+                <span class="badge">Mi mirada</span>
+                <h2 class="section-title text-left">Mi forma de entender este trabajo</h2>
+
+                <div class="entender-grid">
+                    <div class="entender-texto">
+                        <p>
+                            Para mí, las experiencias no existen de manera aislada. Nuestra historia, relaciones, cultura y contexto social influyen profundamente en cómo entendemos el mundo y a nosotrxs mismxs.
+                        </p>
+                        <p>
+                            Por eso, no creo en aplicar la misma respuesta a todxs. Me interesa comprender a cada persona dentro de su propio contexto y construir un proceso que tenga sentido para su experiencia y necesidades.
+                        </p>
+                        <p>
+                            También soy una persona <strong>queer y migrante</strong>, y estas experiencias han contribuido a mi forma de comprender la diversidad y la importancia de crear espacios donde las personas no tengan que justificar o esconder partes fundamentales de quienes son.
+                        </p>
+                        <p>
+                            Trabajo desde una perspectiva explícitamente sensible al género y afirmativa de las diversidades sexuales y de género. Tengo amplia experiencia acompañando a personas <strong>LGBTQIA+</strong> y a personas que están explorando preguntas relacionadas con su identidad, género o sexualidad.
+                        </p>
+                        <p>
+                            Mi práctica es también <strong>afirmativa de la neurodivergencia</strong>, respetando las diferentes formas de pensar, sentir, comunicarse y experimentar el mundo.
+                        </p>
+                    </div>
+
+                    <blockquote class="destacado-card">
+                        <div class="destacado-quote-mark">“</div>
+                        <p>
+                            Comprender una dificultad no significa solamente identificar aquello que genera malestar, sino construir un espacio seguro donde puedas entender mejor tu experiencia y explorar lo que tiene sentido para ti.
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SPARK COLLECTIVE CON FOTO DE FACHADA -->
+        <section class="seccion-clara">
+            <div class="container">
+                <div class="spark-box">
+                    <div class="spark-img-wrapper">
+                        <Image src={frontSpark} alt="Fachada e instalaciones de Spark Collective en Berlín" class="spark-foto" />
+                    </div>
+
+                    <div class="spark-contenido">
+                        <span class="badge-spark">Consulta Presencial en Berlín</span>
+                        <h2>Spark Collective</h2>
+                        <p>
+                            Soy fundadora participante de <strong>Spark</strong>, una consulta autogestionada en Berlín creada desde un colectivo queer junto a profesionales de distintas disciplinas y contextos.
+                        </p>
+                        <p>
+                            Spark nace del deseo de construir un espacio seguro, acogedor y respetuoso para las diversidades, donde las personas puedan sentirse recibidas sin tener que explicar o defender aspectos fundamentales de su identidad.
+                        </p>
+                        <p class="spark-direccion">
+                            <strong>Dirección:</strong> Markgrafendamm 20, Berlín.
+                        </p>
+
+                        <div class="spark-actions">
+                            <a href="https://sparkcollectiveberlin.com/" target="_blank" rel="noopener" class="btn btn-primary">
+                                Sitio Web de Spark &rarr;
+                            </a>
+                            <a href="https://www.instagram.com/spark.collective.praxis/" target="_blank" rel="noopener" class="btn btn-outline">
+                                Instagram @spark.collective.praxis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. TALLERES Y COLABORACIONES -->
+        <section class="seccion-lavanda">
+            <div class="container">
+                <div class="talleres-wrapper">
+                    <div class="talleres-info">
+                        <span class="badge">Espacios Colectivos</span>
+                        <h2>Talleres y Colaboraciones</h2>
+                        <p class="subtitulo-seccion">Salud mental, migración y espacios de reflexión colectiva</p>
+
+                        <p>
+                            Además de mi trabajo individual, diseño y facilito talleres y espacios grupales relacionados con salud mental, bienestar emocional y experiencias de migración.
+                        </p>
+                        <p>
+                            He facilitado <em>Lost in Integration</em>, un taller sobre migración y salud mental desarrollado en colaboración con <strong>AWO</strong>.
+                        </p>
+                        <p>
+                            Me interesa crear espacios que permitan compartir experiencias, reflexionar colectivamente y desarrollar conversaciones sobre temas que afectan nuestro bienestar y nuestra vida cotidiana. Los talleres pueden estar dirigidos a organizaciones, proyectos, escuelas, comunidades, equipos de trabajo u otros grupos abiertos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. LLAMADA A LA ACCIÓN (CTA FINAL A CONTACTO) -->
+        <section class="seccion-cta seccion-oscura">
+            <div class="container text-center">
+                <h2>¿Quieres iniciar tu proceso o coordinar una colaboración?</h2>
+                <p class="cta-subtitle">
+                    Sesiones disponibles en español e inglés, en modalidad online y presencial en Berlín.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/es/#contacto" class="btn btn-primary">
+                        Escribir un mensaje / Reservar
+                    </a>
+                    <a href="https://wa.me/4915225279914" target="_blank" rel="noopener" class="btn btn-whatsapp">
+                        Hablar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</BaseLayout>
+
+<style>
+    .about-page {
+        padding-top: 80px;
+    }
+
+    /* 1. Hero */
+    .about-hero {
+        padding: 70px 0 60px;
+    }
+
+    .grid-hero {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    .foto-frame {
+        position: relative;
+        position: sticky;
+        top: 100px;
+    }
+
+
+    .foto-perfil {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        position: relative;
+        z-index: 2;
+        display: block;
+    }
+
+    .foto-decoracion {
+        position: absolute;
+        top: 16px;
+        left: -16px;
+        width: 100%;
+        height: 100%;
+        background-color: var(--lavender-soft);
+        border-radius: var(--radius);
+        z-index: 1;
+    }
+
+    .lead-text {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--secondary-color);
+        margin: 15px 0 18px;
+        line-height: 1.5;
+    }
+
+    .hero-texto-col p {
+        margin-bottom: 14px;
+        color: var(--text-main);
+        line-height: 1.7;
+    }
+
+    .badge {
+        display: inline-block;
+        background: var(--lavender-soft);
+        color: var(--secondary-color);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    /* Medallas / Tags con Efecto Hover */
+    .tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 25px 0;
+    }
+
+    .tag {
+        background: var(--bg-alt);
+        color: var(--secondary-color);
+        border: 1px solid var(--lavender-medium);
+        padding: 7px 16px;
+        border-radius: 20px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        cursor: default;
+        transition: all 0.25s ease;
+        box-shadow: 0 2px 6px rgba(129, 99, 139, 0.05);
+    }
+
+    .tag:hover {
+        background-color: var(--lavender-soft);
+        border-color: var(--secondary-color);
+        color: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(129, 99, 139, 0.18);
+    }
+
+    /* Dimensionamiento uniforme para Iconos SVG e Imagen */
+    .profile-icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .profile-img-icon {
+        object-fit: cover;
+        border-radius: 3px;
+        display: block;
+    }
+
+    /* Botones de perfiles */
+    .social-profiles {
+        display: flex;
+        gap: 14px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+    }
+
+    .profile-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        border-radius: 25px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        border: 1px solid var(--lavender-medium);
+        background: var(--bg-alt);
+        color: var(--secondary-color);
+        transition: all 0.25s ease;
+    }
+
+    .profile-btn:hover {
+        transform: translateY(-2px);
+        background: var(--lavender-soft);
+    }
+
+    .icon-svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .linkedin-btn:hover {
+        color: #0a66c2;
+        border-color: #0a66c2;
+    }
+
+    .complicated-btn:hover {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    /* 2. Métricas */
+    .metricas-bar {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, var(--bg-dark) 100%);
+        color: var(--white);
+        padding: 35px 0;
+    }
+
+    .grid-metricas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        text-align: center;
+    }
+
+    .metrica-num {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--mint-soft);
+        margin-bottom: 4px;
+    }
+
+    .metrica-label {
+        font-size: 0.92rem;
+        color: var(--lavender-soft);
+    }
+
+    /* 3. Mi forma de entender */
+    .seccion-entender {
+        max-width: 1000px;
+    }
+
+    .entender-grid {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 40px;
+        margin-top: 25px;
+        align-items: center;
+    }
+
+    .entender-texto p {
+        margin-bottom: 16px;
+        line-height: 1.75;
+    }
+
+    .destacado-card {
+        background: var(--bg-card);
+        border-left: 4px solid var(--primary-color);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        padding: 35px 25px;
+        box-shadow: var(--shadow);
+        position: relative;
+    }
+
+    .destacado-quote-mark {
+        font-size: 3.5rem;
+        color: var(--lavender-medium);
+        line-height: 1;
+        font-family: Georgia, serif;
+        margin-bottom: -10px;
+    }
+
+    .destacado-card p {
+        font-style: italic;
+        color: var(--secondary-color);
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+
+    /* 4. Spark Collective */
+    .spark-box {
+        display: grid;
+        grid-template-columns: 420px 1fr;
+        gap: 45px;
+        background: radial-gradient(circle at top right, #f8f2fb 0%, #ffffff 100%);
+        border: 2px solid var(--lavender-soft);
+        border-radius: var(--radius);
+        padding: 40px;
+        box-shadow: var(--shadow);
+        align-items: center;
+    }
+
+    .spark-img-wrapper {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+    }
+
+    .spark-foto {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .badge-spark {
+        display: inline-block;
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .spark-contenido h2 {
+        margin-bottom: 15px;
+    }
+
+    .spark-contenido p {
+        margin-bottom: 14px;
+        line-height: 1.65;
+    }
+
+    .spark-direccion {
+        color: var(--secondary-color);
+        font-size: 1.05rem;
+    }
+
+    .spark-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+    }
+
+    /* 5. Talleres */
+    .talleres-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        background: var(--bg-card);
+        padding: 45px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+    }
+
+    .subtitulo-seccion {
+        font-size: 1.15rem;
+        font-weight: 500;
+        color: var(--primary-color);
+        margin: 6px 0 20px;
+    }
+
+    .talleres-info p {
+        margin-bottom: 14px;
+        line-height: 1.7;
+    }
+
+    /* 6. CTA Final */
+    .seccion-cta {
+        padding: 70px 0;
+    }
+
+    .seccion-cta h2 {
+        color: var(--white);
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+
+    .cta-subtitle {
+        color: var(--lavender-soft);
+        font-size: 1.15rem;
+        margin-bottom: 35px;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 950px) {
+        .grid-hero, .spark-box, .entender-grid {
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .foto-frame {
+            max-width: 360px;
+            margin: 0 auto 20px;
+            position: relative; /* <-- CAMBIAR: 'relative' en vez de 'static' */
+            top: 0;             /* Desactiva el offset de sticky */
+        }
+
+        .spark-box {
+            padding: 25px;
+        }
+
+        .talleres-wrapper {
+            padding: 30px 20px;
+        }
+    }
+</style>

@@ -1,0 +1,148 @@
+---
+// src/components/Hero.astro
+import img1 from '../assets/Consulta1.jpeg';
+import img14 from '../assets/Consulta14.jpeg';
+import img4 from '../assets/Consulta4.jpeg';
+
+interface Props {
+    title: string;
+    subtitle: string;
+    details?: string;
+    ctaBookText: string;
+    ctaServicesText: string;
+    lang: 'es' | 'en';
+}
+
+const { title, subtitle, details, ctaBookText, ctaServicesText, lang } = Astro.props;
+---
+
+<section class="hero">
+    <div class="hero-slider">
+        <div class="slide slide-1" style={`background-image: url('${img1.src}');`}></div>
+        <div class="slide slide-2" style={`background-image: url('${img14.src}');`}></div>
+        <div class="slide slide-3" style={`background-image: url('${img4.src}');`}></div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content container">
+        <h1>{title}</h1>
+        <p class="hero-subtitle">{subtitle}</p>
+        {details && <p class="hero-details">{details}</p>}
+        <div class="hero-buttons">
+            <a href={`/${lang}/#contacto`} class="btn btn-primary">{ctaBookText}</a>
+            <a href={`/${lang}/#servicios`} class="btn btn-outline-hero">{ctaServicesText}</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 650px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background-color: var(--bg-dark);
+    }
+
+    .hero-slider, .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide {
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        animation: heroCrossfade 18s infinite ease-in-out;
+    }
+
+    .slide-1 { animation-delay: 0s; }
+    .slide-2 { animation-delay: 6s; }
+    .slide-3 { animation-delay: 12s; }
+
+    @keyframes heroCrossfade {
+        0%   { opacity: 0; }
+        8%   { opacity: 1; }
+        33%  { opacity: 1; }
+        41%  { opacity: 0; }
+        100% { opacity: 0; }
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(55, 40, 60, 0.82) 0%, rgba(46, 36, 50, 0.65) 100%);
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 850px;
+        color: var(--white);
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+        color: var(--white);
+        margin-bottom: 18px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    /* Subtítulo principal */
+    .hero-subtitle {
+        font-size: 1.25rem;
+        margin-bottom: 14px;
+        color: #f7f3f9;
+        line-height: 1.6;
+    }
+
+    /* Texto secundario de modalidades y ubicación */
+    .hero-details {
+        font-size: 1.05rem; /* Levemente más pequeño */
+        color: var(--mint-soft); /* Color menta diferenciador (#9ce0db) */
+        font-weight: 500;
+        margin-bottom: 35px;
+        letter-spacing: 0.3px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-outline-hero {
+        border: 2px solid var(--white);
+        color: var(--white);
+        padding: 14px 32px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .btn-outline-hero:hover {
+        background: var(--white);
+        color: var(--secondary-color);
+    }
+
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 2.1rem; }
+        .hero-subtitle { font-size: 1.1rem; }
+        .hero-details { font-size: 0.95rem; margin-bottom: 25px; }
+    }
+</style>

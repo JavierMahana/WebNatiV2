@@ -1,0 +1,116 @@
+---
+// src/components/Faq.astro
+interface FaqItem {
+    question: string;
+    answer: string;
+}
+
+interface Props {
+    title: string;
+    items: FaqItem[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<section id="faq" class="seccion-alt">
+    <div class="container">
+        <h2 class="section-title">{title}</h2>
+        <div class="faq-container">
+            {items.map((item) => (
+                    <div class="faq-item">
+                        <button class="faq-pregunta" type="button">
+                            <h4>{item.question}</h4>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-respuesta">
+                            <p>{item.answer}</p>
+                        </div>
+                    </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .faq-container {
+        max-width: 800px;
+        margin: 40px auto 0;
+    }
+
+    .faq-item {
+        background-color: var(--bg-card);
+        border-radius: var(--radius);
+        margin-bottom: 16px;
+        border: 1px solid var(--lavender-soft);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+    }
+
+    .faq-pregunta {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 22px 26px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        text-align: left;
+        transition: background-color 0.3s ease;
+    }
+
+    .faq-pregunta:hover {
+        background-color: var(--bg-alt);
+    }
+
+    .faq-pregunta h4 {
+        margin: 0;
+        font-size: 1.15rem;
+        color: var(--secondary-color);
+    }
+
+    .faq-icon {
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: var(--primary-color);
+        transition: transform 0.3s ease;
+    }
+
+    .faq-item.activa .faq-icon {
+        transform: rotate(45deg);
+    }
+
+    .faq-respuesta {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        padding: 0 26px;
+    }
+
+    .faq-item.activa .faq-respuesta {
+        max-height: 600px;
+        padding: 0 26px 24px 26px;
+    }
+
+    .faq-respuesta p {
+        color: var(--text-light);
+        line-height: 1.7;
+        margin: 0;
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.faq-pregunta').forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.faq-item');
+            if (!item) return;
+
+            document.querySelectorAll('.faq-item').forEach(otro => {
+                if (otro !== item) otro.classList.remove('activa');
+            });
+
+            item.classList.toggle('activa');
+        });
+    });
+</script>
