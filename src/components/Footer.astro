@@ -7,6 +7,7 @@ interface Props {
 
 const { currentLang } = Astro.props;
 const t = useTranslations(currentLang);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <footer class="footer">
@@ -19,10 +20,10 @@ const t = useTranslations(currentLang);
         <div class="footer-col">
             <h4>Navegación</h4>
             <ul>
-                <li><a href={`/${currentLang}/`}>{t('nav.home')}</a></li>
-                <li><a href={`/${currentLang}/about`}>{t('nav.about')}</a></li>
-                <li><a href={`/${currentLang}/#servicios`}>{t('nav.services')}</a></li>
-                <li><a href={`/${currentLang}/#contacto`}>{t('nav.contact')}</a></li>
+                <li><a href={`${base}/${currentLang}/`}>{t('nav.home')}</a></li>
+                <li><a href={`${base}/${currentLang}/about`}>{t('nav.about')}</a></li>
+                <li><a href={`${base}/${currentLang}/#servicios`}>{t('nav.services')}</a></li>
+                <li><a href={`${base}/${currentLang}/#contacto`}>{t('nav.contact')}</a></li>
             </ul>
         </div>
 

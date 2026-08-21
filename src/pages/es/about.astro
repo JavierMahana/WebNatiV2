@@ -5,6 +5,8 @@ import { Image } from 'astro:assets';
 import nataliaFoto from '../../assets/NataliaMahana.jpeg';
 import frontSpark from '../../assets/FrontSpark.jpeg';
 import itsComplicatedLogo from '../../assets/itscomplicated.jpg';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout
@@ -208,7 +210,7 @@ import itsComplicatedLogo from '../../assets/itscomplicated.jpg';
                     Sesiones disponibles en español e inglés, en modalidad online y presencial en Berlín.
                 </p>
                 <div class="cta-buttons">
-                    <a href="/es/#contacto" class="btn btn-primary">
+                    <a href={`${base}/es/#contacto`} class="btn btn-primary">
                         Escribir un mensaje / Reservar
                     </a>
                     <a href="https://wa.me/4915225279914" target="_blank" rel="noopener" class="btn btn-whatsapp">

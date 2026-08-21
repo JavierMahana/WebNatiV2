@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import imgConsulta4 from '../../../assets/Consulta4.jpeg';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout title="Psicología para Niñxs y Adolescentes | Natalia Mahana Palomer" lang="es">
@@ -91,7 +92,7 @@ import imgConsulta4 from '../../../assets/Consulta4.jpeg';
                     <h4>Seguro médico público</h4>
                     <p class="info-seguro">El seguro médico público alemán no cubre mis sesiones de forma directa. Para buscar profesionales cubiertos por Krankenkasse, visita <a href="https://arztsuche.116117.de/" target="_blank" rel="noopener">KV Berlin (116117)</a>.</p>
 
-                    <a href="/es/#contacto" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Consultar o reservar</a>
+                    <a href={`${base}/es/#contacto`} class="btn btn-primary" style="width: 100%; margin-top: 15px;">Consultar o reservar</a>
                 </div>
             </aside>
         </div>

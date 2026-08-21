@@ -14,6 +14,7 @@ interface Props {
 }
 
 const { title, subtitle, details, ctaBookText, ctaServicesText, lang } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section class="hero">
@@ -30,8 +31,8 @@ const { title, subtitle, details, ctaBookText, ctaServicesText, lang } = Astro.p
         <p class="hero-subtitle">{subtitle}</p>
         {details && <p class="hero-details">{details}</p>}
         <div class="hero-buttons">
-            <a href={`/${lang}/#contacto`} class="btn btn-primary">{ctaBookText}</a>
-            <a href={`/${lang}/#servicios`} class="btn btn-outline-hero">{ctaServicesText}</a>
+            <a href={`${base}/${lang}/#contacto`} class="btn btn-primary">{ctaBookText}</a>
+            <a href={`${base}/${lang}/#servicios`} class="btn btn-outline-hero">{ctaServicesText}</a>
         </div>
     </div>
 </section>

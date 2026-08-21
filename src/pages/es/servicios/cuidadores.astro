@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import imgConsulta14 from '../../../assets/Consulta14.jpeg';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout title="Acompañamiento para Cuidadorxs | Natalia Mahana Palomer" lang="es">
@@ -98,7 +99,7 @@ import imgConsulta14 from '../../../assets/Consulta14.jpeg';
                     <h4>Seguro médico público</h4>
                     <p class="info-seguro">El seguro público alemán no cubre estas sesiones privadas. Para derivaciones públicas consultar en <a href="https://arztsuche.116117.de/" target="_blank" rel="noopener">KV Berlin (116117)</a>.</p>
 
-                    <a href="/es/#contacto" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Reservar una sesión</a>
+                    <a href={`${base}/es/#contacto`} class="btn btn-primary" style="width: 100%; margin-top: 15px;">Reservar una sesión</a>
                 </div>
             </aside>
         </div>
