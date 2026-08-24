@@ -11,6 +11,7 @@ export default defineConfig({
         },
     },
     site: 'https://nataliamahana.com',
+    base: '/',
 });
 
 
