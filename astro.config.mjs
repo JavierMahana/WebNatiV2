@@ -10,7 +10,7 @@ export default defineConfig({
             redirectToDefaultLocale: false, // We will handle custom language detection manually
         },
     },
-
+    site: 'https://nataliamahana.com',
 });
 
 
