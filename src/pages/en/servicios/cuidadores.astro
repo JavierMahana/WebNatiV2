@@ -1,0 +1,134 @@
+---
+// src/pages/en/servicios/cuidadores.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import imgConsulta14 from '../../../assets/Consulta14.jpeg';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+        title="Support for Caregivers & Parents | Natalia Mahana Palomer"
+        lang="en"
+        description="Psychological guidance and support for mothers, fathers, and caregivers. Online and in-person sessions in Berlin."
+>
+    <div class="container seccion-detalle">
+
+        <header class="header-detalle">
+            <h1>Support for mothers, fathers, and caregivers</h1>
+            <p class="lead">When parenting feels overwhelming, you do not have to navigate it alone.</p>
+        </header>
+
+        <div class="grid-detalle">
+            <div class="detalle-texto">
+                <Image src={imgConsulta14} alt="Parenting and caregiving support" class="banner-img" />
+
+                <p>Parenting and caring can be deeply meaningful, but also challenging, exhausting, and full of uncertainty. Sometimes we feel we have tried everything and nothing seems to work. There may be persistent conflicts, difficulties setting boundaries, emotional outbursts, or behaviors that feel hard to understand.</p>
+
+                <p>I do not work from one-size-fits-all recipes or the idea that there is only one correct way to parent. Together, we can explore family dynamics, gain a clearer understanding of the needs and emotions involved, and develop tools that genuinely make sense for you and your family.</p>
+
+                <p><em>Support for caregivers is a standalone service; your child does not need to attend individual sessions with me for us to work together.</em></p>
+
+                <h3>Common areas of work:</h3>
+                <ul class="lista-items">
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Behavioral difficulties at home or at school.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Frequent conflicts and complex family dynamics.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Boundaries and how to sustain them with clarity and respect.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Tantrums, emotional outbursts, or difficulties with emotional regulation.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Concerns regarding changes in a child’s behavior, mood, or engagement.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Stress, exhaustion, and feeling overwhelmed in the caregiving role.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Support regarding gender diversity and sexuality in children and youth.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Concerns related to neurodivergence or other individual differences.</span>
+                    </li>
+                    <li>
+                        <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Coordination between different caregiving figures or with the school.</span>
+                    </li>
+                </ul>
+
+                <h3>In-Person Location in Berlin</h3>
+                <p>In-person sessions at Spark: Markgrafendamm 20, Berlin.</p>
+                <div class="mapa-wrapper">
+                    <iframe
+                            src="https://maps.google.com/maps?q=SPARK%20Collective,%20Markgrafendamm%2020,%20Berlin&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="320"
+                            style="border:0; border-radius: 12px;"
+                            allowfullscreen=""
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <aside class="sidebar-precios">
+                <div class="pricing-card">
+                    <h3>Fees & Modalities</h3>
+                    <p class="duracion-sesion">Session duration: 50 minutes</p>
+
+                    <div class="precio-item">
+                        <span class="modalidad">Online Session</span>
+                        <span class="valor">80 €</span>
+                    </div>
+
+                    <div class="precio-item">
+                        <span class="modalidad">In-Person Session (Spark)</span>
+                        <span class="valor">100 €</span>
+                    </div>
+
+                    <p class="nota-social">Reduced-rate spots: Limited availability of sliding-scale spots for families and individuals with limited or variable income.</p>
+
+                    <hr />
+
+                    <h4>Public Health Insurance (Krankenkasse)</h4>
+                    <p class="info-seguro">German statutory public insurance does not cover these private sessions. For publicly covered referrals, please consult <a href="https://arztsuche.116117.de/" target="_blank" rel="noopener">KV Berlin (116117)</a>.</p>
+
+                    <a href={`${base}/en/#contacto`} class="btn btn-primary" style="width: 100%; margin-top: 15px;">Book a session</a>
+                </div>
+            </aside>
+        </div>
+
+    </div>
+</BaseLayout>
+
+<style>
+    .seccion-detalle { padding-top: 130px; padding-bottom: 90px; }
+    .header-detalle { text-align: center; max-width: 800px; margin: 0 auto 50px; }
+    .lead { font-size: 1.2rem; color: var(--text-light); margin-top: 10px; }
+    .grid-detalle { display: grid; grid-template-columns: 1fr 380px; gap: 50px; align-items: start; }
+    .banner-img { width: 100%; height: 320px; object-fit: cover; border-radius: var(--radius); margin-bottom: 30px; }
+    .detalle-texto h3 { margin-top: 45px; margin-bottom: 18px; }
+    .lista-items { list-style: none; padding: 0; margin: 20px 0 35px; }
+    .lista-items li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 1rem; color: var(--text-main); line-height: 1.55; }
+    .item-icon { width: 18px; height: 18px; color: var(--primary-color); margin-top: 4px; flex-shrink: 0; }
+    .sidebar-precios { position: sticky; top: 100px; }
+    .pricing-card { background: var(--bg-alt); border: 1px solid var(--lavender-soft); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .duracion-sesion { font-size: 0.95rem; color: var(--secondary-color); margin: 6px 0 16px; }
+    .precio-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--lavender-soft); }
+    .precio-item .valor { font-size: 1.5rem; font-weight: 700; color: var(--secondary-color); }
+    .nota-social, .info-seguro { font-size: 0.88rem; color: var(--text-light); margin-top: 15px; line-height: 1.5; }
+    .mapa-wrapper { margin-top: 20px; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+    @media (max-width: 850px) { .grid-detalle { grid-template-columns: 1fr; } .sidebar-precios { position: static; } }
+</style>

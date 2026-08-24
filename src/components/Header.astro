@@ -25,7 +25,7 @@ const cleanPath = pathname
         <!-- Logo -->
         <a href={`${base}/${currentLang}/`} class="brand-logo">
             <span class="brand-name">Natalia Mahana</span>
-            <span class="brand-sub">Psicóloga</span>
+            <span class="brand-sub">{t('brand.sub')}</span>
         </a>
 
         <!-- Navegación -->
@@ -82,7 +82,7 @@ const cleanPath = pathname
     }
 
     .brand-name {
-        font-size: 1.44rem; /* +15% */
+        font-size: 1.44rem;
         font-weight: 700;
         color: var(--secondary-color);
         line-height: 1.15;
@@ -90,7 +90,7 @@ const cleanPath = pathname
     }
 
     .brand-sub {
-        font-size: 0.86rem; /* +15% */
+        font-size: 0.86rem;
         color: var(--text-light);
         letter-spacing: 1.1px;
         text-transform: uppercase;
@@ -113,7 +113,7 @@ const cleanPath = pathname
     }
 
     .nav-item {
-        font-size: 1.06rem; /* +15% */
+        font-size: 1.06rem;
         font-weight: 500;
         color: var(--text-main);
         transition: color 0.3s ease, transform 0.2s ease;
@@ -133,7 +133,7 @@ const cleanPath = pathname
     .nav-btn-contact {
         background-color: var(--primary-color);
         color: var(--white) !important;
-        font-size: 1.06rem; /* +15% */
+        font-size: 1.06rem;
         font-weight: 600;
         padding: 8px 20px;
         border-radius: 30px;
@@ -151,7 +151,7 @@ const cleanPath = pathname
     .lang-switch {
         display: flex;
         gap: 6px;
-        font-size: 0.98rem; /* +15% */
+        font-size: 0.98rem;
         font-weight: 600;
         align-items: center;
         flex-shrink: 0;
@@ -174,21 +174,18 @@ const cleanPath = pathname
 
     /* ================= RESPONSIVE PROGRESIVO ================= */
 
-    /* Nivel 1 (< 1040px): Oculta 'Mi Enfoque' y 'FAQ' */
     @media (max-width: 1040px) {
         .nav-tier-1 {
             display: none !important;
         }
     }
 
-    /* Nivel 2 (< 780px): Oculta 'Inicio' y 'Sobre Mí' */
     @media (max-width: 780px) {
         .nav-tier-2 {
             display: none !important;
         }
     }
 
-    /* Nivel 3 (< 520px): Oculta 'Contacto' (Queda SOLO 'Servicios' en el menú) */
     @media (max-width: 520px) {
         .nav-tier-3 {
             display: none !important;
@@ -204,7 +201,6 @@ const cleanPath = pathname
         }
     }
 
-    /* Móviles ultra compactos (< 360px) */
     @media (max-width: 360px) {
         .brand-name {
             font-size: 1.1rem;

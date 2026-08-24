@@ -1,9 +1,571 @@
 ---
+// src/pages/en/about.astro
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import nataliaFoto from '../../assets/NataliaMahana.jpeg';
+import frontSpark from '../../assets/FrontSpark.jpeg';
+import itsComplicatedLogo from '../../assets/itscomplicated.jpg';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout title="About Me | Creative Studio" lang="en">
-    <h1>About Us</h1>
-    <p>We are a dedicated team focused on crafting modern digital experiences.</p>
-    <p>We work with cutting-edge technologies including Astro, HTML5, and clean CSS.</p>
+<BaseLayout
+        title="About Me | Natalia Mahana Palomer"
+        lang="en"
+        description="Clinical psychologist graduated from Universidad de Chile with over 10 years of experience. In-person practice in Berlin and online in English and Spanish."
+>
+    <div class="about-page">
+
+        <!-- 1. HERO / PERSONAL INTRODUCTION -->
+        <section class="about-hero seccion-clara">
+            <div class="container grid-hero">
+                <div class="hero-foto-col">
+                    <div class="foto-frame">
+                        <Image src={nataliaFoto} alt="Natalia Mahana Palomer" class="foto-perfil" />
+                        <div class="foto-decoracion"></div>
+                    </div>
+                </div>
+
+                <div class="hero-texto-col">
+                    <span class="badge">Professional Background</span>
+                    <h1>Hello, I am Natalia Mahana Palomer</h1>
+                    <p class="lead-text">
+                        Chilean psychologist with over ten years of experience working with children, adolescents, adults, and families.
+                    </p>
+
+                    <p>
+                        I began my private practice in Chile in 2017 and, after moving to Berlin, continued working independently with individuals and families from diverse cultural backgrounds.
+                    </p>
+
+                    <p>
+                        Throughout my career, I have worked across various clinical and educational settings, including private practice, hospitals, specialized eating disorder clinics, and schools in Chile. These experiences have allowed me to cultivate a broad, nuanced understanding of the different ways people experience their challenges and how distinct life contexts shape them.
+                    </p>
+
+                    <p>
+                        I hold a degree in Clinical Psychology from Universidad de Chile, with specialized post-graduate training in clinical work with children and adolescents from a constructivist perspective, as well as emotion regulation tools. My experience also encompasses psychological assessment, family guidance, interdisciplinary collaboration, and workshop facilitation.
+                    </p>
+
+                    <!-- Approach Badges -->
+                    <div class="tags-container">
+                        <span class="tag">Queer-Affirming</span>
+                        <span class="tag">Neuroaffirming</span>
+                        <span class="tag">Intercultural Perspective</span>
+                        <span class="tag">Constructivist Approach</span>
+                        <span class="tag">Gender-Sensitive</span>
+                    </div>
+
+                    <!-- Professional Profiles -->
+                    <div class="social-profiles">
+                        <a
+                                href="https://www.linkedin.com/in/natalia-mahana-palomer"
+                                target="_blank"
+                                rel="noopener"
+                                class="profile-btn linkedin-btn"
+                                aria-label="LinkedIn Profile"
+                        >
+                            <svg class="profile-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6Z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+
+                        <a
+                                href="https://complicated.life/therapists/clinical-psychologist-children-and-adolescent-counsellor-natalia-mahana-palomer"
+                                target="_blank"
+                                rel="noopener"
+                                class="profile-btn complicated-btn"
+                                aria-label="Profile on It's Complicated"
+                        >
+                            <Image
+                                    src={itsComplicatedLogo}
+                                    alt="It's Complicated Logo"
+                                    class="profile-icon profile-img-icon"
+                            />
+                            <span>It's Complicated</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. CLINICAL METRICS -->
+        <section class="metricas-bar">
+            <div class="container grid-metricas">
+                <div class="metrica-item">
+                    <span class="metrica-num">+10</span>
+                    <span class="metrica-label">Years of clinical experience</span>
+                </div>
+                <div class="metrica-item">
+                    <span class="metrica-num">U. de Chile</span>
+                    <span class="metrica-label">Graduated with distinction</span>
+                </div>
+                <div class="metrica-item">
+                    <span class="metrica-num">2017</span>
+                    <span class="metrica-label">Start of private practice</span>
+                </div>
+                <div class="metrica-item">
+                    <span class="metrica-num">Berlin & Online</span>
+                    <span class="metrica-label">English & Spanish</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. MY APPROACH TO THIS WORK -->
+        <section class="seccion-alt">
+            <div class="container seccion-entender">
+                <span class="badge">My Perspective</span>
+                <h2 class="section-title text-left">How I understand this work</h2>
+
+                <div class="entender-grid">
+                    <div class="entender-texto">
+                        <p>
+                            In my view, our experiences do not exist in isolation. Our personal history, relationships, culture, and social environment deeply shape the way we understand the world, connect with others, and perceive ourselves.
+                        </p>
+                        <p>
+                            Because of this, I do not believe in applying a one-size-fits-all answer to everyone. I focus on understanding each person within their unique context and co-creating a therapeutic process that is genuinely meaningful to their lived experience, needs, and goals.
+                        </p>
+                        <p>
+                            I am a queer, migrant, and neurodivergent person. These lived experiences, alongside my academic background and clinical practice, have deeply informed my understanding of diversity and the importance of fostering spaces where no one has to justify, hide, or leave behind fundamental aspects of their identity.
+                        </p>
+                        <p>
+                            I work from an intersectional, gender-sensitive, and affirming perspective toward sexual and gender diversity. I have extensive experience supporting LGBTQIA+ individuals, as well as those exploring questions related to identity, gender expression, sexual orientation, or relationship dynamics.
+                        </p>
+                        <p>
+                            My practice is also neuroaffirming: it recognizes neurodivergence as a natural part of human diversity and respects different ways of thinking, feeling, communicating, and experiencing the world. I can accompany processes of self-exploration, psychoeducation, and identifying supports and accommodations, whether you identify as neurodivergent or are exploring this possibility. I do not provide diagnostic assessments for neurodivergence.
+                        </p>
+                    </div>
+
+                    <blockquote class="destacado-card">
+                        <div class="destacado-quote-mark">“</div>
+                        <p>
+                            Understanding a difficulty does not merely mean identifying what causes distress; it means building a safe space where you can better understand your experience and explore what truly makes sense for you.
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SPARK COLLECTIVE -->
+        <section class="seccion-clara">
+            <div class="container">
+                <div class="spark-box">
+                    <div class="spark-img-wrapper">
+                        <Image src={frontSpark} alt="Spark Collective facilities in Berlin" class="spark-foto" />
+                    </div>
+
+                    <div class="spark-contenido">
+                        <span class="badge-spark">In-Person Practice in Berlin</span>
+                        <h2>Spark Collective</h2>
+                        <p>
+                            I am a co-founding member of Spark, a self-managed practice in Berlin created by a queer collective alongside professionals from diverse disciplines and backgrounds.
+                        </p>
+                        <p>
+                            Spark was born from the desire to create a safe, welcoming, and respectful space for diversity—where people can feel received without having to explain or defend essential aspects of who they are.
+                        </p>
+                        <p class="spark-direccion">
+                            <strong>Address:</strong> Markgrafendamm 20, Berlin.
+                        </p>
+
+                        <div class="spark-actions">
+                            <a href="https://sparkcollectiveberlin.com/" target="_blank" rel="noopener" class="btn btn-primary">
+                                Spark Website &rarr;
+                            </a>
+                            <a href="https://www.instagram.com/spark.collective.praxis/" target="_blank" rel="noopener" class="btn btn-outline">
+                                Instagram @spark.collective.praxis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. WORKSHOPS AND COLLABORATIONS -->
+        <section class="seccion-lavanda">
+            <div class="container">
+                <div class="talleres-wrapper">
+                    <div class="talleres-info">
+                        <span class="badge">Collective Spaces</span>
+                        <h2>Workshops & Collaborations</h2>
+                        <p class="subtitulo-seccion">Mental health, migration, and spaces for collective reflection</p>
+
+                        <p>
+                            Alongside my individual clinical work, I design and facilitate workshops and group spaces focused on mental health, emotional well-being, and migration experiences.
+                        </p>
+                        <p>
+                            I have facilitated <em>Lost in Integration</em>, a workshop on migration and mental health developed in collaboration with <strong>AWO</strong>.
+                        </p>
+                        <p>
+                            I am passionate about creating spaces where people can share experiences, reflect collectively, and develop meaningful conversations on topics that shape our well-being and daily lives. Workshops can be tailored for organizations, community projects, schools, teams, or open public groups.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FINAL CALL TO ACTION -->
+        <section class="seccion-cta seccion-oscura">
+            <div class="container text-center">
+                <h2>Would you like to begin a therapeutic process or coordinate a collaboration?</h2>
+                <p class="cta-subtitle">
+                    Sessions available in English and Spanish, online and in-person in Berlin.
+                </p>
+                <div class="cta-buttons">
+                    <a href={`${base}/en/#contacto`} class="btn btn-primary">
+                        Send a message / Book a session
+                    </a>
+                    <a href="https://wa.me/4915225279914" target="_blank" rel="noopener" class="btn btn-whatsapp">
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
 </BaseLayout>
+
+<style>
+    .about-page {
+        padding-top: 80px;
+    }
+
+    /* 1. Hero */
+    .about-hero {
+        padding: 70px 0 60px;
+    }
+
+    .grid-hero {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    .foto-frame {
+        position: relative;
+        position: sticky;
+        top: 100px;
+    }
+
+    .foto-perfil {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        position: relative;
+        z-index: 2;
+        display: block;
+    }
+
+    .foto-decoracion {
+        position: absolute;
+        top: 16px;
+        left: -16px;
+        width: 100%;
+        height: 100%;
+        background-color: var(--lavender-soft);
+        border-radius: var(--radius);
+        z-index: 1;
+    }
+
+    .lead-text {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--secondary-color);
+        margin: 15px 0 18px;
+        line-height: 1.5;
+    }
+
+    .hero-texto-col p {
+        margin-bottom: 14px;
+        color: var(--text-main);
+        line-height: 1.7;
+    }
+
+    .badge {
+        display: inline-block;
+        background: var(--lavender-soft);
+        color: var(--secondary-color);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Tags */
+    .tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 25px 0;
+    }
+
+    .tag {
+        background: var(--bg-alt);
+        color: var(--secondary-color);
+        border: 1px solid var(--lavender-medium);
+        padding: 7px 16px;
+        border-radius: 20px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        cursor: default;
+        transition: all 0.25s ease;
+        box-shadow: 0 2px 6px rgba(129, 99, 139, 0.05);
+    }
+
+    .tag:hover {
+        background-color: var(--lavender-soft);
+        border-color: var(--secondary-color);
+        color: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(129, 99, 139, 0.18);
+    }
+
+    .profile-icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .profile-img-icon {
+        object-fit: cover;
+        border-radius: 3px;
+        display: block;
+    }
+
+    .social-profiles {
+        display: flex;
+        gap: 14px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+    }
+
+    .profile-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        border-radius: 25px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        border: 1px solid var(--lavender-medium);
+        background: var(--bg-alt);
+        color: var(--secondary-color);
+        transition: all 0.25s ease;
+    }
+
+    .profile-btn:hover {
+        transform: translateY(-2px);
+        background: var(--lavender-soft);
+    }
+
+    .linkedin-btn:hover {
+        color: #0a66c2;
+        border-color: #0a66c2;
+    }
+
+    .complicated-btn:hover {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    /* 2. Metrics */
+    .metricas-bar {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, var(--bg-dark) 100%);
+        color: var(--white);
+        padding: 35px 0;
+    }
+
+    .grid-metricas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        text-align: center;
+    }
+
+    .metrica-num {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--mint-soft);
+        margin-bottom: 4px;
+    }
+
+    .metrica-label {
+        font-size: 0.92rem;
+        color: var(--lavender-soft);
+    }
+
+    /* 3. My Perspective */
+    .seccion-entender {
+        max-width: 1000px;
+    }
+
+    .entender-grid {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 40px;
+        margin-top: 25px;
+        align-items: center;
+    }
+
+    .entender-texto p {
+        margin-bottom: 16px;
+        line-height: 1.75;
+    }
+
+    .destacado-card {
+        background: var(--bg-card);
+        border-left: 4px solid var(--primary-color);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        padding: 35px 25px;
+        box-shadow: var(--shadow);
+        position: relative;
+    }
+
+    .destacado-quote-mark {
+        font-size: 3.5rem;
+        color: var(--lavender-medium);
+        line-height: 1;
+        font-family: Georgia, serif;
+        margin-bottom: -10px;
+    }
+
+    .destacado-card p {
+        font-style: italic;
+        color: var(--secondary-color);
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+
+    /* 4. Spark Collective */
+    .spark-box {
+        display: grid;
+        grid-template-columns: 420px 1fr;
+        gap: 45px;
+        background: radial-gradient(circle at top right, #f8f2fb 0%, #ffffff 100%);
+        border: 2px solid var(--lavender-soft);
+        border-radius: var(--radius);
+        padding: 40px;
+        box-shadow: var(--shadow);
+        align-items: center;
+    }
+
+    .spark-img-wrapper {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+    }
+
+    .spark-foto {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .badge-spark {
+        display: inline-block;
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .spark-contenido h2 {
+        margin-bottom: 15px;
+    }
+
+    .spark-contenido p {
+        margin-bottom: 14px;
+        line-height: 1.65;
+    }
+
+    .spark-direccion {
+        color: var(--secondary-color);
+        font-size: 1.05rem;
+    }
+
+    .spark-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+    }
+
+    /* 5. Workshops */
+    .talleres-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        background: var(--bg-card);
+        padding: 45px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+    }
+
+    .subtitulo-seccion {
+        font-size: 1.15rem;
+        font-weight: 500;
+        color: var(--primary-color);
+        margin: 6px 0 20px;
+    }
+
+    .talleres-info p {
+        margin-bottom: 14px;
+        line-height: 1.7;
+    }
+
+    /* 6. CTA Final */
+    .seccion-cta {
+        padding: 70px 0;
+    }
+
+    .seccion-cta h2 {
+        color: var(--white);
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+
+    .cta-subtitle {
+        color: var(--lavender-soft);
+        font-size: 1.15rem;
+        margin-bottom: 35px;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 950px) {
+        .grid-hero, .spark-box, .entender-grid {
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .foto-frame {
+            max-width: 360px;
+            margin: 0 auto 20px;
+            position: relative;
+            top: 0;
+        }
+
+        .spark-box {
+            padding: 25px;
+        }
+
+        .talleres-wrapper {
+            padding: 30px 20px;
+        }
+    }
+</style>

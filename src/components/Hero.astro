@@ -8,12 +8,13 @@ interface Props {
     title: string;
     subtitle: string;
     details?: string;
+    modality?: string;
     ctaBookText: string;
     ctaServicesText: string;
     lang: 'es' | 'en';
 }
 
-const { title, subtitle, details, ctaBookText, ctaServicesText, lang } = Astro.props;
+const { title, subtitle, details, modality, ctaBookText, ctaServicesText, lang } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
@@ -30,6 +31,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <h1>{title}</h1>
         <p class="hero-subtitle">{subtitle}</p>
         {details && <p class="hero-details">{details}</p>}
+        {modality && <p class="hero-modality">{modality}</p>}
         <div class="hero-buttons">
             <a href={`${base}/${lang}/#contacto`} class="btn btn-primary">{ctaBookText}</a>
             <a href={`${base}/${lang}/#servicios`} class="btn btn-outline-hero">{ctaServicesText}</a>
@@ -106,15 +108,24 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     /* Subtítulo principal */
     .hero-subtitle {
         font-size: 1.25rem;
-        margin-bottom: 14px;
+        margin-bottom: 16px;
         color: #f7f3f9;
         line-height: 1.6;
     }
 
-    /* Texto secundario de modalidades y ubicación */
+    /* Texto de público objetivo */
     .hero-details {
-        font-size: 1.05rem; /* Levemente más pequeño */
-        color: var(--mint-soft); /* Color menta diferenciador (#9ce0db) */
+        font-size: 1.05rem;
+        color: #ede2f2;
+        font-weight: 400;
+        margin-bottom: 8px;
+        line-height: 1.5;
+    }
+
+    /* Texto destacado de modalidad y ubicación */
+    .hero-modality {
+        font-size: 1.05rem;
+        color: var(--mint-soft);
         font-weight: 500;
         margin-bottom: 35px;
         letter-spacing: 0.3px;
@@ -144,6 +155,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     @media (max-width: 768px) {
         .hero h1 { font-size: 2.1rem; }
         .hero-subtitle { font-size: 1.1rem; }
-        .hero-details { font-size: 0.95rem; margin-bottom: 25px; }
+        .hero-details { font-size: 0.95rem; margin-bottom: 6px; }
+        .hero-modality { font-size: 0.95rem; margin-bottom: 25px; }
     }
 </style>

@@ -21,7 +21,11 @@ export const ui = {
         'btn.more': 'Conocer más',
         'btn.whatsapp': 'Escribir por WhatsApp',
         'footer.rights': 'Todos los derechos reservados.',
-        'footer.disclaimer': 'Aviso Legal y Protección de Datos (Datenschutz & Impressum)',
+        'brand.sub': 'Psicóloga',
+        'footer.description': 'Psicología y acompañamiento psicológico en español e inglés. Espacio queer-affirming, intercultural y neuroafirmativo.',
+        'footer.nav': 'Navegación',
+        'footer.contact': 'Consulta & Contacto',
+        'footer.disclaimer': 'Este sitio web no recopila datos personales sin tu consentimiento.',
     },
     en: {
         'site.title': 'Natalia Mahana Palomer | Psychologist in Berlin & Online',
@@ -37,7 +41,11 @@ export const ui = {
         'btn.more': 'Learn more',
         'btn.whatsapp': 'Chat on WhatsApp',
         'footer.rights': 'All rights reserved.',
-        'footer.disclaimer': 'Legal Notice & Data Privacy (Datenschutz & Impressum)',
+        'brand.sub': 'Psychologist',
+        'footer.description': 'Psychology and therapeutic support in English and Spanish. Queer-affirming, intercultural, and neuroaffirming space.',
+        'footer.nav': 'Navigation',
+        'footer.contact': 'Location & Contact',
+        'footer.disclaimer': 'This website does not collect personal data without your consent.',
     },
 } as const;
 

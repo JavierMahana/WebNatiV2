@@ -1,11 +1,539 @@
 ---
+// src/pages/en/index.astro
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Faq from '../../components/Faq.astro';
+import { Image } from 'astro:assets';
+
+import nataliaFoto from '../../assets/NataliaMahana.jpeg';
+import imgConsulta1 from '../../assets/Consulta1.jpeg';
+import imgConsulta14 from '../../assets/Consulta14.jpeg';
+import imgConsulta4 from '../../assets/Consulta4.jpeg';
+
+// Manejo de base para GitHub Pages y localhost
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const faqItems = [
+    {
+        question: 'Can I have online sessions even if I do not live in Berlin?',
+        answer: 'Yes. I offer online sessions via video call in Spanish and English for individuals anywhere in the world.'
+    },
+    {
+        question: 'Do you also offer in-person sessions?',
+        answer: 'Yes. I offer in-person sessions at Spark (Markgrafendamm 20, Berlin).'
+    },
+    {
+        question: 'Does German health insurance cover the sessions?',
+        answer: 'German statutory health insurance (gesetzliche Krankenkasse) does not cover the cost of my sessions. Some private insurance providers may cover part or all of the costs, depending on your individual policy conditions.'
+    },
+    {
+        question: 'Do I need to know exactly what is wrong before booking a session?',
+        answer: 'No. You do not need to arrive with a diagnosis or a clear explanation. We can begin from whatever is concerning you right now or what you simply wish to understand better.'
+    },
+    {
+        question: 'Can I book a session to discuss my child’s difficulties without them attending?',
+        answer: 'Yes. Support for mothers, fathers, and caregivers can be conducted as a standalone service without the child needing to attend individual sessions with me.'
+    },
+    {
+        question: 'Do you work with LGBTQIA+ individuals?',
+        answer: 'Yes. My practice is an explicitly affirmative and safe space for people of diverse gender identities and sexualities.'
+    },
+    {
+        question: 'Do you work with neurodivergence?',
+        answer: 'Yes. My practice has a neuroaffirming approach, and I can support you whether you identify as neurodivergent or are exploring this possibility. In our sessions, we can address your experiences, needs, and ways of processing the world, as well as how they relate to your well-being and daily life.\nWe can also work through psychoeducation, identify supports, and develop strategies tailored to you. I do not provide diagnostic assessments, but I can support you in the process of better understanding neurodivergence and exploring helpful resources.'
+    },
+    {
+        question: 'Can I contact you to organize a workshop?',
+        answer: 'Yes. Feel free to write to me if you are interested in organizing a workshop, talk, or group space for organizations, schools, or communities.'
+    }
+];
 ---
 
-<BaseLayout title="Home | Creative Studio" lang="en">
-    <h1>Web Design & Development</h1>
-    <p>We build fast, customized websites designed to scale your business.</p>
-    <a href="/en/about" style="display: inline-block; margin-top: 1rem; background: #000; color: #fff; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px;">
-        Learn more about us &rarr;
-    </a>
+<BaseLayout
+        title="Natalia Mahana Palomer | Psychologist in Berlin & Online"
+        lang="en"
+        description="Psychology and therapeutic support in English and Spanish. Queer-affirming, intercultural, and neuroaffirming space in Berlin and online."
+>
+
+    <!-- 1. HERO -->
+    <Hero
+            title="A space to explore, understand, and create new possibilities"
+            subtitle="To get to know yourself more deeply, connect with your needs, and find authentic ways of living and relating that support your well-being."
+            details="Psychological support for adults, adolescents, children, and parental figures."
+            modality="Online in Spanish and English, with in-person sessions in Berlin"
+            ctaBookText="Book a session"
+            ctaServicesText="Explore my services"
+            lang="en"
+    />
+
+    <!-- 2. ABOUT ME TEASER -->
+    <section id="quien-soy" class="seccion-clara">
+        <div class="container grid-2-col">
+            <div class="perfil-foto-wrapper">
+                <Image src={nataliaFoto} alt="Natalia Mahana Palomer - Psychologist" class="perfil-foto" />
+            </div>
+            <div class="perfil-texto">
+                <span class="badge">You do not need to be in crisis to seek support</span>
+                <h2>I am Natalia Mahana Palomer</h2>
+                <p class="perfil-intro">Chilean clinical psychologist with over ten years of experience.</p>
+
+                <p>
+                    Sometimes we recognize that something needs attention, even if we cannot explain exactly what is happening. My work is grounded in a personalized, intercultural perspective that considers the stories, relationships, and contexts that shape your experience.
+                </p>
+
+                <blockquote class="quote-box">
+                    “This is a queer-affirming space that respects diverse identities, sexualities, relationship styles, and ways of experiencing the world.”
+                </blockquote>
+
+                <a href={`${base}/en/about`} class="btn btn-secondary">Learn more about me &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SERVICES -->
+    <section id="servicios" class="seccion-alt">
+        <div class="container">
+            <h2 class="section-title">How can I support you?</h2>
+            <p class="section-subtitle">Services tailored to different life stages and personal needs.</p>
+
+            <div class="grid-servicios">
+                <!-- Service 1 -->
+                <div class="servicio-card">
+                    <Image src={imgConsulta1} alt="Psychology for adults" class="servicio-img" />
+                    <div class="servicio-info">
+                        <h3>Psychology for adults</h3>
+                        <p>A space to pause, gain a deeper understanding of what you are experiencing, and explore new ways of relating to yourself and others.</p>
+                        <span class="servicio-tag">Online & In-Person • English & Spanish</span>
+                        <a href={`${base}/en/servicios/adultos`} class="btn btn-outline">Learn more</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="servicio-card">
+                    <Image src={imgConsulta14} alt="Support for caregivers and parents" class="servicio-img" />
+                    <div class="servicio-info">
+                        <h3>Support for caregivers & parents</h3>
+                        <p>When parenting feels overwhelming, you do not have to navigate it alone. Respectful tools and insights that make sense for your family.</p>
+                        <span class="servicio-tag">Online & In-Person • English & Spanish</span>
+                        <a href={`${base}/en/servicios/cuidadores`} class="btn btn-outline">Learn more</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="servicio-card">
+                    <Image src={imgConsulta4} alt="Psychology for children and adolescents" class="servicio-img" />
+                    <div class="servicio-info">
+                        <h3>Children & adolescents</h3>
+                        <p>A safe environment where young people can feel heard, express what they are going through, and develop tools to navigate difficulties.</p>
+                        <span class="servicio-tag">Online & In-Person • English & Spanish</span>
+                        <a href={`${base}/en/servicios/ninos-adolescentes`} class="btn btn-outline">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. MY APPROACH -->
+    <section id="enfoque" class="seccion-lavanda">
+        <div class="container">
+            <h2 class="section-title">My Approach</h2>
+            <p class="section-subtitle">Every therapeutic process is unique because every story, context, and individual is different.</p>
+
+            <div class="grid-enfoque">
+
+                <!-- Card 1: Constructivism -->
+                <div class="enfoque-card">
+                    <div class="enfoque-icon-wrapper">
+                        <svg class="enfoque-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Constructivist Perspective</h3>
+                    <p>Understanding a difficulty means exploring how that experience has been constructed, what meaning it holds for you, and the relationships and personal histories connected to it.</p>
+                </div>
+
+                <!-- Card 2: Queer-Affirming -->
+                <div class="enfoque-card">
+                    <div class="enfoque-icon-wrapper">
+                        <svg class="enfoque-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                        </svg>
+                    </div>
+                    <h3>Queer-Affirming Space</h3>
+                    <p>An explicitly affirmative environment where diverse gender identities, sexual orientations, and relationship styles are recognized, respected, and valued without judgment.</p>
+                </div>
+
+                <!-- Card 3: Neuroaffirmation & Interculturality -->
+                <div class="enfoque-card">
+                    <div class="enfoque-icon-wrapper">
+                        <svg class="enfoque-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                            <path d="M2 12h20"/>
+                        </svg>
+                    </div>
+                    <h3>Neuroaffirmation & Interculturality</h3>
+                    <p>Deep respect for different ways of perceiving, feeling, and processing the world, thoughtfully integrating the emotional realities of migration and intercultural adjustment.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FAQ -->
+    <Faq title="Frequently Asked Questions" items={faqItems} />
+
+    <!-- 6. CONTACT & EMERGENCIES -->
+    <section id="contacto" class="seccion-clara">
+        <div class="container grid-2-col">
+            <div class="contacto-info">
+                <span class="badge">Contact</span>
+                <h2>Let's talk</h2>
+                <p class="contacto-desc">
+                    If you have questions or would like to explore the possibility of beginning a process, feel free to write to me and briefly share what you are looking for.
+                </p>
+
+                <!-- Email with Icon -->
+                <div class="contacto-item">
+                    <svg class="contacto-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L1 7"/>
+                    </svg>
+                    <a href="mailto:n.mahanapalomer@proton.me">n.mahanapalomer@proton.me</a>
+                </div>
+
+                <br />
+
+                <a href="https://wa.me/4915225279914" target="_blank" rel="noopener" class="btn btn-whatsapp" style="margin: 20px 0;">
+                    Chat on WhatsApp (+49 1522 5279914)
+                </a>
+
+                <!-- Psychological Emergencies -->
+                <div class="crisis-box">
+                    <h4>Psychological emergencies</h4>
+                    <p>
+                        In case of an acute psychological crisis or if you need urgent support, you can contact the <a href="https://www.berliner-krisendienst.de/en/" target="_blank" rel="noopener" class="crisis-link">Berliner Krisendienst</a>.
+                    </p>
+                    <p class="crisis-urgencia">If there is an immediate risk to your safety or someone else's, call <strong>112</strong>.</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="formulario-card">
+                <form action="https://formsubmit.co/n.mahanapalomer@proton.me" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <div class="form-group">
+                        <label for="nombre">Name</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="servicio">Area of interest</label>
+                        <select id="servicio" name="servicio">
+                            <option value="adultos">Psychology for adults</option>
+                            <option value="cuidadores">Support for caregivers & parents</option>
+                            <option value="ninos-adolescentes">Psychology for children & adolescents</option>
+                            <option value="taller">Workshops / Collaborations</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Briefly tell me what you are looking for:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
 </BaseLayout>
+
+<style>
+    .grid-2-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .perfil-foto-wrapper {
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+    }
+
+    .perfil-foto {
+        width: 100%;
+        height: 520px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .badge {
+        display: inline-block;
+        background: var(--lavender-soft);
+        color: var(--secondary-color);
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .perfil-intro {
+        font-size: 1.15rem;
+        font-weight: 500;
+        color: var(--secondary-color);
+        margin-bottom: 12px;
+    }
+
+    .quote-box {
+        margin: 24px 0 30px;
+        padding: 18px 24px;
+        background-color: var(--bg-alt);
+        border-left: 4px solid var(--primary-color);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        font-style: italic;
+        font-size: 1.05rem;
+        color: var(--text-main);
+        line-height: 1.6;
+        box-shadow: 0 4px 15px rgba(129, 99, 139, 0.05);
+    }
+
+    /* Grid Services */
+    .grid-servicios {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+
+    .servicio-card {
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+    }
+
+    .servicio-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .servicio-img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .servicio-info {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .servicio-tag {
+        font-size: 0.85rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .servicio-info .btn {
+        margin-top: auto;
+    }
+
+    /* Grid Approach */
+    .grid-enfoque {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .enfoque-card {
+        background: var(--bg-card);
+        padding: 40px 32px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--lavender-soft);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .enfoque-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        opacity: 0;
+        transition: opacity 0.35s ease;
+    }
+
+    .enfoque-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 40px rgba(129, 99, 139, 0.16);
+        border-color: var(--lavender-medium);
+    }
+
+    .enfoque-card:hover::before {
+        opacity: 1;
+    }
+
+    .enfoque-icon-wrapper {
+        width: 58px;
+        height: 58px;
+        border-radius: 14px;
+        background: var(--bg-alt);
+        color: var(--secondary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 22px;
+        border: 1px solid var(--lavender-soft);
+        transition: all 0.35s ease;
+    }
+
+    .enfoque-icon {
+        width: 28px;
+        height: 28px;
+        transition: transform 0.35s ease;
+    }
+
+    .enfoque-card:hover .enfoque-icon-wrapper {
+        background: var(--primary-color);
+        color: var(--white);
+        border-color: var(--primary-color);
+        transform: scale(1.08) rotate(3deg);
+        box-shadow: 0 6px 16px rgba(93, 193, 185, 0.35);
+    }
+
+    .enfoque-card:hover .enfoque-icon {
+        transform: scale(1.05);
+    }
+
+    .enfoque-card h3 {
+        font-size: 1.28rem;
+        color: var(--secondary-color);
+        margin-bottom: 12px;
+    }
+
+    .enfoque-card p {
+        color: var(--text-light);
+        line-height: 1.68;
+        font-size: 0.96rem;
+        margin: 0;
+    }
+
+    /* Contact & Form */
+    .contacto-desc {
+        margin-bottom: 20px;
+        line-height: 1.65;
+    }
+
+    .contacto-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: var(--secondary-color);
+    }
+
+    .contacto-icon {
+        width: 20px;
+        height: 20px;
+        color: var(--primary-color);
+        flex-shrink: 0;
+    }
+
+    .contacto-item a {
+        color: var(--secondary-color);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .contacto-item a:hover {
+        color: var(--primary-color);
+    }
+
+    .crisis-box {
+        margin-top: 25px;
+        padding: 18px 20px;
+        border-radius: 12px;
+        background: #fff5f5;
+        border-left: 4px solid var(--emergency);
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+
+    .crisis-box h4 {
+        color: var(--emergency);
+        margin-bottom: 6px;
+        font-size: 1rem;
+    }
+
+    .crisis-link {
+        color: var(--emergency);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        font-weight: 600;
+        transition: opacity 0.2s ease;
+    }
+
+    .crisis-link:hover {
+        opacity: 0.8;
+    }
+
+    .crisis-urgencia {
+        margin-top: 6px;
+        font-size: 0.88rem;
+        color: var(--text-light);
+    }
+
+    .formulario-card {
+        background: var(--bg-card);
+        padding: 40px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--lavender-soft);
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--lavender-medium);
+        border-radius: 8px;
+        font-family: inherit;
+    }
+
+    @media (max-width: 768px) {
+        .grid-2-col {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

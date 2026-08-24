@@ -11,6 +11,10 @@ interface Props {
 }
 
 const { title, lang, description = 'Psicología y acompañamiento psicológico en español e inglés en Berlín y Online.' } = Astro.props;
+
+// 1. Declaramos la constante base aquí
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const cleanPath = Astro.url.pathname.replace(/^\/(es|en)/, '') || '/';
 ---
 
@@ -28,8 +32,11 @@ const cleanPath = Astro.url.pathname.replace(/^\/(es|en)/, '') || '/';
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Alternate hreflang tags -->
-    <link rel="alternate" hreflang="es" href={new URL(`/es${cleanPath === '/' ? '/' : cleanPath}`, Astro.url)} />
-    <link rel="alternate" hreflang="en" href={new URL(`/en${cleanPath === '/' ? '/' : cleanPath}`, Astro.url)} />
+    <link rel="alternate" hreflang="es" href={new URL(`${base}/es${cleanPath === '/' ? '/' : cleanPath}`, Astro.url)} />
+    <link rel="alternate" hreflang="en" href={new URL(`${base}/en${cleanPath === '/' ? '/' : cleanPath}`, Astro.url)} />
+
+    <!-- Favicon dinámico con base -->
+    <link rel="icon" type="image/svg+xml" href={`${base}/TempLogo.svg`} />
 </head>
 <body>
 <Header currentLang={lang} />
